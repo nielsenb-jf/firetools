@@ -3,6 +3,7 @@ all: src firetools.1 firejail-ui.1
 datarootdir=@datarootdir@
 PREFIX=@prefix@
 prefix=@prefix@
+libdir=@libdir@
 VERSION=@PACKAGE_VERSION@
 NAME=@PACKAGE_NAME@
 PACKAGE_TARNAME=@PACKAGE_TARNAME@
@@ -10,7 +11,7 @@ DOCDIR=@docdir@
 
 
 firetools_config_extras.h:
-	echo "#define PACKAGE_LIBDIR \"$(DESTDIR)/$(PREFIX)/lib/firetools\"" > firetools_config_extras.h
+	echo "#define PACKAGE_LIBDIR \"$(DESTDIR)/$(libdir)/firetools\"" > firetools_config_extras.h
 
 .PHONY: src
 src: firetools_config_extras.h
@@ -40,16 +41,16 @@ realinstall:
 	mkdir -p $(DESTDIR)/$(PREFIX)/bin
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/applications
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/pixmaps
-	mkdir -p $(DESTDIR)/$(PREFIX)/lib/firetools
+	mkdir -p $(DESTDIR)/$(libdir)/firetools
 	mkdir -p $(DESTDIR)/$(DOCDIR)
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/man/man1
 	install -c -m 0755 build/firetools $(DESTDIR)/$(PREFIX)/bin/.
 	install -c -m 0755 build/firejail-ui $(DESTDIR)/$(PREFIX)/bin/.
-	install -c -m 0755 build/fmgr $(DESTDIR)/$(PREFIX)/lib/firetools/fmgr
-	install -c -m 0755 build/fstats $(DESTDIR)/$(PREFIX)/lib/firetools/fstats
-	install -c -m 0644 src/firetools/uiapps $(DESTDIR)/$(PREFIX)/lib/firetools/.
-	install -c -m 0644 src/firejail-ui/uimenus $(DESTDIR)/$(PREFIX)/lib/firetools/.
-	install -c -m 0644 src/firejail-ui/uihelp $(DESTDIR)/$(PREFIX)/lib/firetools/.
+	install -c -m 0755 build/fmgr $(DESTDIR)/$(libdir)/firetools/fmgr
+	install -c -m 0755 build/fstats $(DESTDIR)/$(libdir)/firetools/fstats
+	install -c -m 0644 src/firetools/uiapps $(DESTDIR)/$(libdir)/firetools/.
+	install -c -m 0644 src/firejail-ui/uimenus $(DESTDIR)/$(libdir)/firetools/.
+	install -c -m 0644 src/firejail-ui/uihelp $(DESTDIR)/$(libdir)/firetools/.
 	install -c -m 0644 src/firetools/firetools.desktop $(DESTDIR)/$(PREFIX)/share/applications/.
 	install -c -m 0644 src/firejail-ui/firejail-ui.desktop $(DESTDIR)/$(PREFIX)/share/applications/.
 	install -c -m 0644 src/firetools/resources/firetools.png $(DESTDIR)/$(PREFIX)/share/pixmaps/.
@@ -83,7 +84,7 @@ uninstall:;
 	rm -fr $(DESTDIR)/$(PREFIX)/share/doc/firetools
 	rm -fr $(DESTDIR)/$(PREFIX)/share/man/man1/firetools.1*
 	rm -fr $(DESTDIR)/$(PREFIX)/share/man/man1/firejail-ui.1*
-	rm -fr $(DESTDIR)/$(PREFIX)/lib/firetools
+	rm -fr $(DESTDIR)/$(libdir)/firetools
 
 dist:
 	mv config.status config.status.old
