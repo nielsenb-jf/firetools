@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Firejail Configuration Wizard
-Comment=Firejail configuration wizard
+Comment=Configuration wizard for Firejail
 Exec=firejail-ui
 Icon=firejail-ui
 Terminal=false
