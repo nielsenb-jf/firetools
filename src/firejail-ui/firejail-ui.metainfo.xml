@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>firejail-ui.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-only AND GPL-2.0-or-later AND CC-BY-SA-3.0 AND MPL-2.0 AND GPL-1.0-only AND LGPL-2.0-only</project_license>
+  <name>Firejail Configuration Wizard</name>
+  <summary>Configuration wizard for Firejail</summary>
+  <description>
+    <p>
+      Configuration wizard that creates application profiles for
+      the Firejail security sandbox.
+    </p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://firejailtools.wordpress.com/wp-content/uploads/2019/11/screen7.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://firejailtools.wordpress.com/wp-content/uploads/2019/11/screen8.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://firejailtools.wordpress.com/wp-content/uploads/2019/11/screen9.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://firejailtools.wordpress.com/wp-content/uploads/2021/01/screen10.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://firejailtools.wordpress.com/</url>
+  <url type="bugtracker">https://github.com/netblue30/firetools/issues</url>
+</component>

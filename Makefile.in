@@ -39,6 +39,7 @@ distclean: clean
 realinstall:
 	mkdir -p $(DESTDIR)/$(PREFIX)/bin
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/applications
+	mkdir -p $(DESTDIR)/$(PREFIX)/share/metainfo
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/pixmaps
 	mkdir -p $(DESTDIR)/$(PREFIX)/lib/firetools
 	mkdir -p $(DESTDIR)/$(DOCDIR)
@@ -51,7 +52,9 @@ realinstall:
 	install -c -m 0644 src/firejail-ui/uimenus $(DESTDIR)/$(PREFIX)/lib/firetools/.
 	install -c -m 0644 src/firejail-ui/uihelp $(DESTDIR)/$(PREFIX)/lib/firetools/.
 	install -c -m 0644 src/firetools/firetools.desktop $(DESTDIR)/$(PREFIX)/share/applications/.
+	install -c -m 0644 src/firetools/firetools.metainfo.xml $(DESTDIR)/$(PREFIX)/share/metainfo/.
 	install -c -m 0644 src/firejail-ui/firejail-ui.desktop $(DESTDIR)/$(PREFIX)/share/applications/.
+	install -c -m 0644 src/firejail-ui/firejail-ui.metainfo.xml $(DESTDIR)/$(PREFIX)/share/metainfo/.
 	install -c -m 0644 src/firetools/resources/firetools.png $(DESTDIR)/$(PREFIX)/share/pixmaps/.
 	install -c -m 0644 src/firetools/resources/firetools-minimal.png $(DESTDIR)/$(PREFIX)/share/pixmaps/.
 	install -c -m 0644 src/firejail-ui/resources/firejail-ui.png $(DESTDIR)/$(PREFIX)/share/pixmaps/.
@@ -80,6 +83,8 @@ uninstall:;
 	rm -f $(DESTDIR)/$(PREFIX)/share/pixmaps/firejail-ui.png
 	rm -f $(DESTDIR)/$(PREFIX)/share/applications/firetools.desktop
 	rm -f $(DESTDIR)/$(PREFIX)/share/applications/firejail-ui.desktop
+	rm -f $(DESTDIR)/$(PREFIX)/share/metainfo/firetools.metainfo.xml
+	rm -f $(DESTDIR)/$(PREFIX)/share/metainfo/firejail-ui.metainfo.xml
 	rm -fr $(DESTDIR)/$(PREFIX)/share/doc/firetools
 	rm -fr $(DESTDIR)/$(PREFIX)/share/man/man1/firetools.1*
 	rm -fr $(DESTDIR)/$(PREFIX)/share/man/man1/firejail-ui.1*
